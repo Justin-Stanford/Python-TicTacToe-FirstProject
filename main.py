@@ -1,35 +1,31 @@
 import pygame
-import gamelogic
 
-SIZEX = 500
-SIZEY = 500
-rectWidth = SIZEX / 3
-rectLength = SIZEY / 3
+import board_renderer
+import game_logic
+#import board_renderer
+
+SIZE_X = 501
+SIZE_Y = 501
 
 pygame.init()
-screen = pygame.display.set_mode((SIZEX, SIZEY))
+screen = pygame.display.set_mode((SIZE_X, SIZE_Y))
 clock = pygame.time.Clock()
 running = True
 
 while running:
-    # poll for events
-    # pygame.QUIT event means the user clicked X to close your window
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    # fill the screen with a color to wipe away anything from last frame
     screen.fill("black")
 
-    # RENDER YOUR GAME HERE
-    for x in range(1,3): #each cell is going to be sizex / 3, sizey / 3
-        for y in range(1,3):
-            
+    board_renderer.draw_board(screen, SIZE_X, SIZE_Y)
 
-    # flip() the display to put your work on screen
+
+
     pygame.display.flip()
 
-    clock.tick(60)  # limits FPS to 60
+    clock.tick(60)
 
 pygame.quit()
-l
