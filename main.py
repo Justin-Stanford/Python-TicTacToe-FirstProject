@@ -25,18 +25,17 @@ while running:
         turn = board_io.mouse_click(board, turn, x_pos, y_pos, SIZE_X, SIZE_Y)
         print(turn)
 
-
     board_io.draw_board(screen, board, SIZE_X, SIZE_Y)
-
-    # for event in pygame.event.get():
-    #     if event.type == pygame.MOUSEBUTTONDOWN:
-
-
-
-
 
     pygame.display.flip()
 
     clock.tick(60)
+
+    if (game_logic.win_check(board) == 1):
+        print("X wins!")
+        pygame.quit()
+    elif (game_logic.win_check(board) == 2):
+        print("O wins!")
+        pygame.quit()
 
 pygame.quit()

@@ -33,17 +33,9 @@ def mouse_click(board, turn, cursor_pos_x, cursor_pos_y, screen_size_x, screen_s
                 start_coord = (screen_size_x / 3 * x, screen_size_y / 3 * y)
                 end_coord = ((screen_size_x / 3 * x) + (screen_size_x / 3), (screen_size_y / 3 * y) + (screen_size_y / 3))
                 if(cursor_pos_x > start_coord[0] and cursor_pos_x < end_coord[0] and cursor_pos_y > start_coord[1] and cursor_pos_y < end_coord[1]):
-                    if(board[x][y] == 0):
-                        board[x][y] = turn
-                        if(turn == 1):
-                            turn = 2
-                            return turn
-                        elif(turn == 2):
-                            turn = 1
-                            return turn
-                    elif(board[x][y] != 0):
-                        return turn
-
-
-
-
+                    board[x][y] = turn
+                    if(turn == 1):
+                        turn = 2
+                    elif(turn == 2):
+                        turn = 1
+    return turn
