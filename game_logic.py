@@ -8,13 +8,13 @@ def win_check(board):
     mid = board[1][1]
     bl = board[2][0]
     br = board[2][2]
-# Horizontal Check
+# Vertical Check
     for x in board:
         if x == p1:
             return 1
         elif x == p2:
             return 2
-# Vertical check
+# Horizontal check
     for x in range(3):
         first = board[0][x]
         second = board[1][x]

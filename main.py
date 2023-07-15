@@ -19,8 +19,8 @@ while running:
             running = False
 
     screen.fill("black")
-
-    board_renderer.draw_board(screen, SIZE_X, SIZE_Y)
+    board = [[1, 1, 1], [2, 0, 0], [1, 0, 0]]
+    board_renderer.draw_board(screen, board, SIZE_X, SIZE_Y)
 
 
 
