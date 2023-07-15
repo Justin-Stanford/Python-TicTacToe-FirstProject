@@ -19,13 +19,15 @@ while running:
             running = False
 
     screen.fill("black")
-    board_io.draw_board(screen, board, SIZE_X, SIZE_Y)
     if(pygame.mouse.get_pressed(num_buttons=3)[0] == True):
         x_pos = pygame.mouse.get_pos()[0]
         y_pos = pygame.mouse.get_pos()[1]
-        print(x_pos, y_pos)
         turn = board_io.mouse_click(board, turn, x_pos, y_pos, SIZE_X, SIZE_Y)
         print(turn)
+
+
+    board_io.draw_board(screen, board, SIZE_X, SIZE_Y)
+
     # for event in pygame.event.get():
     #     if event.type == pygame.MOUSEBUTTONDOWN:
 
