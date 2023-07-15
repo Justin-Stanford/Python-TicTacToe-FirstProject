@@ -1,11 +1,11 @@
 import pygame
-
-import board_renderer
+import board_io
 import game_logic
-#import board_renderer
 
 SIZE_X = 501
 SIZE_Y = 501
+board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+turn = 1
 
 pygame.init()
 screen = pygame.display.set_mode((SIZE_X, SIZE_Y))
@@ -19,8 +19,17 @@ while running:
             running = False
 
     screen.fill("black")
-    board = [[1, 1, 1], [2, 0, 0], [1, 0, 0]]
-    board_renderer.draw_board(screen, board, SIZE_X, SIZE_Y)
+    board_io.draw_board(screen, board, SIZE_X, SIZE_Y)
+    if(pygame.mouse.get_pressed(num_buttons=3)[0] == True):
+        x_pos = pygame.mouse.get_pos()[0]
+        y_pos = pygame.mouse.get_pos()[1]
+        print(x_pos, y_pos)
+        turn = board_io.mouse_click(board, turn, x_pos, y_pos, SIZE_X, SIZE_Y)
+        print(turn)
+    # for event in pygame.event.get():
+    #     if event.type == pygame.MOUSEBUTTONDOWN:
+
+
 
 
 
